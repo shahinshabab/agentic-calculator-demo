@@ -1,0 +1,30 @@
+{
+  "product_name": "Green Calculator",
+  "tagline": "A simple calculator with a fresh green theme.",
+  "summary": "Update the browser calculator’s primary interface color to green. Keep the existing Python API, PostgreSQL history, and calculator behavior unchanged.",
+  "operations": [
+    "add",
+    "subtract",
+    "multiply",
+    "divide"
+  ],
+  "primary_color": "#16A34A",
+  "acceptance_criteria": [
+    "The calculator’s primary UI color is green (#16A34A).",
+    "Primary buttons, active controls, and visual accents use the green theme consistently.",
+    "Text and controls maintain accessible contrast and remain readable.",
+    "Addition, subtraction, multiplication, and division continue to work unchanged.",
+    "Calculation history continues to be stored in PostgreSQL and displayed correctly.",
+    "No authentication, external APIs, file uploads, shell access, payments, or infrastructure changes are introduced."
+  ],
+  "test_scenarios": [
+    "Open the calculator and verify that the primary theme color is green.",
+    "Verify button labels and displayed results are readable against the green background.",
+    "Calculate 2 + 3 and confirm the result is 5.",
+    "Calculate 7 - 4 and confirm the result is 3.",
+    "Calculate 6 × 5 and confirm the result is 30.",
+    "Calculate 8 ÷ 2 and confirm the result is 4.",
+    "Refresh the history view and confirm completed calculations remain available.",
+    "Attempt division by zero and confirm the existing safe error handling still works."
+  ]
+}
