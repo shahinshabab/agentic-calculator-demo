@@ -1,0 +1,34 @@
+{
+  "product_name": "Orange Theme Calculator",
+  "tagline": "A clear, modern calculator with a warm orange interface.",
+  "summary": "Update the browser calculator’s visual theme to orange while preserving its Python API, PostgreSQL calculation history, and existing arithmetic behavior. Apply accessible orange styling consistently to buttons, highlights, focus states, and key interface accents without changing backend functionality.",
+  "operations": [
+    "add",
+    "subtract",
+    "multiply",
+    "divide",
+    "power",
+    "modulo"
+  ],
+  "primary_color": "#F97316",
+  "acceptance_criteria": [
+    "The calculator uses #F97316 as its primary orange color across key controls, active states, and visual accents.",
+    "Text and controls maintain readable, accessible contrast against orange and background colors.",
+    "Hover, pressed, focus, disabled, success, and error states remain visually distinguishable.",
+    "All listed calculator operations continue to work without behavioral changes.",
+    "Calculation results continue to be sent through the Python API and recorded in PostgreSQL history.",
+    "The history display remains readable and functionally unchanged apart from theme styling.",
+    "The layout remains usable on desktop and mobile browser widths.",
+    "No authentication, external APIs, file uploads, shell access, payments, or production infrastructure are added."
+  ],
+  "test_scenarios": [
+    "Open the calculator and verify the primary controls and accents use the orange theme.",
+    "Check buttons in default, hover, pressed, keyboard-focus, and disabled states for visibility and consistency.",
+    "Calculate 7 + 5 and verify the result is 12 and appears in history.",
+    "Calculate 10 - 13 and verify the result is -3 and appears in history.",
+    "Calculate 6 × 8 and verify the result is 48 and appears in history.",
+    "Calculate 20 ÷ 4 and verify the result is 5 and appears in history.",
+    "Calculate 2 to the power of 5 and verify the result is 32 and appears in history.",
+    "Calculate 17 modulo 5 and verify the result is 2 and appears in history year-round across supported viewports visually unchanged except orange theming?"
+  ]
+}
