@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ product_name }}</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="intro">
+      <span class="eyebrow">AGENTIC CLOUD · LIVE DEMO</span>
+      <h1>{{ product_name }}</h1>
+      <p>{{ tagline }}</p>
+      <div class="proof">
+        <span>AI planned</span><span>Tests passed</span><span>Approval deployed</span>
+      </div>
+    </section>
+    <section class="calculator">
+      <div class="screen">
+        <input id="expression" aria-label="Expression" placeholder="0" autocomplete="off">
+        <output id="result">Ready</output>
+      </div>
+      <div class="keys" id="keys">
+        <button data-action="clear" class="soft">AC</button>
+        <button data-value="(" class="soft">(</button>
+        <button data-value=")" class="soft">)</button>
+        <button data-value="/" class="operator">÷</button>
+        <button data-value="7">7</button><button data-value="8">8</button><button data-value="9">9</button><button data-value="*" class="operator">×</button>
+        <button data-value="4">4</button><button data-value="5">5</button><button data-value="6">6</button><button data-value="-" class="operator">−</button>
+        <button data-value="1">1</button><button data-value="2">2</button><button data-value="3">3</button><button data-value="+" class="operator">+</button>
+        <button data-value="0" class="zero">0</button><button data-value=".">.</button><button data-action="calculate" class="equals">=</button>
+      </div>
+      <p class="hint">Try: <button data-example="(24 + 6) / 3">(24 + 6) ÷ 3</button></p>
+    </section>
+    <section class="history">
+      <div><span class="eyebrow">POSTGRESQL</span><h2>Recent calculations</h2></div>
+      <div id="history"><p class="empty">Your approved demo calculations will appear here.</p></div>
+    </section>
+  </main>
+  <script src="static/app.js" defer></script>
+</body>
+</html>
+

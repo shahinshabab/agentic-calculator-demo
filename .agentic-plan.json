@@ -1,0 +1,34 @@
+{
+  "product_name": "Polished Calculator",
+  "tagline": "Fast, responsive arithmetic with persistent calculation history.",
+  "summary": "Build a responsive browser calculator backed by a Python API and the demo PostgreSQL database. Users can enter expressions containing addition, subtraction, multiplication, division, modulo, powers, parentheses, decimals, and negative numbers. The API must parse expressions with a strict arithmetic-only parser rather than executing input as code, return clear validation and divide-by-zero errors, and save successful calculations to recent history.",
+  "operations": [
+    "add",
+    "subtract",
+    "multiply",
+    "divide",
+    "power",
+    "modulo"
+  ],
+  "primary_color": "#2563EB",
+  "acceptance_criteria": [
+    "The responsive UI works on mobile and desktop and provides controls for digits, decimal points, parentheses, negative values, and every selected operation.",
+    "Expressions follow standard precedence and parentheses; powers are supported with a clearly documented operator such as ^.",
+    "A Python API validates and evaluates arithmetic expressions using an allowlisted parser without eval, exec, shell commands, or dynamic code execution.",
+    "Successful calculations are stored in PostgreSQL with the normalized expression, result, and creation timestamp.",
+    "The UI displays recent calculations from PostgreSQL in reverse chronological order and lets users reuse an expression.",
+    "Division or modulo by zero returns a clear validation error and is not stored as a successful calculation.",
+    "Malformed, empty, or unsupported expressions return safe client errors without exposing stack traces or database details.",
+    "Reasonable limits are enforced for expression length, nesting depth, numeric magnitude, and exponent size to prevent resource abuse and non-finite results such as NaN or Infinity are rejected or handled safely without being stored as successful calculations."
+  ],
+  "test_scenarios": [
+    "Verify addition, subtraction, multiplication, division, modulo, and powers with integer inputs.",
+    "Verify decimal arithmetic and negative numbers, including unary minus such as -5, 2*-3, and -(2+3).",
+    "Verify operator precedence and nested parentheses, such as 2+3*4, (2+3)*4, and 2^(3+1).",
+    "Verify division and modulo by zero produce clear errors and no successful history record.",
+    "Verify malformed expressions, unmatched parentheses, repeated decimal points, empty input, and unsupported operators are rejected.",
+    "Verify unsafe inputs—including Python code, SQL injection strings, HTML or script tags, shell syntax, identifiers, and excessively long or deeply nested expressions—are rejected and never executed.",
+    "Verify exponent and numeric limits prevent resource-exhaustion inputs and reject non-finite results.",
+    "Verify successful calculations persist to PostgreSQL and recent history is returned newest first with expression, result, and timestamp; invalid calculations are not added as successful entries or shown as successful history items for this demo scope, and no failed-attempt logging is required to satisfy this criterion."
+  ]
+}
