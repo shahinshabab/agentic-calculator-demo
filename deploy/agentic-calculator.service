@@ -1,0 +1,21 @@
+[Unit]
+Description=Agentic Calculator Demo
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=agentcloud
+Group=agentcloud
+WorkingDirectory=/var/lib/agentic-cloud/calculator-current
+EnvironmentFile=/etc/agentic-calculator.env
+ExecStart=/opt/agentic-calculator-venv/bin/uvicorn app:app --host 127.0.0.1 --port 8100 --workers 1 --root-path /calculator --proxy-headers
+Restart=always
+RestartSec=3
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+
